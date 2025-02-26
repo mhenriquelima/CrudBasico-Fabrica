@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Atualizar</title>
 </head>
 <body>
-    <h1>Cadastro</h1>
-    <form action="{% url 'usuarios:criar' %}" method="post">
+    <!-- Função basica para receber um form ja preenchido do usuario -->
+    <h1>Atualizar usuario:</h1>
+    <form action="{% url 'usuarios:atualizar' usuario.id %}" method="post">
         {% csrf_token %}
         {% for field in form %}
             <br>
@@ -16,10 +17,7 @@
             {{ field }}
             <br>
         {% endfor %}
-        <br>
-        <button type="submit">Cadastrar</button>
+        <input type="submit" value="Atualizar">
     </form>
-    
-    <button><a href="{% url 'usuarios:home' %}">Voltar</a></button>
 </body>
 </html>

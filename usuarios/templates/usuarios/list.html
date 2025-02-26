@@ -28,7 +28,9 @@
                     <td>{{ usuario.birth_date }}</td>
                     <td>{{ usuario.phone }}</td>
                     <td>
-                        <a href="{% url 'usuarios:detalhe' usuario.id %}">Detalhes</a>
+                        <a href="{% url 'usuarios:detalhe' usuario.id %}"><button>Detalhes</button></a>
+                        <a href="{% url 'usuarios:atualizar' usuario.id %}"><button>Atualizar</button></a>
+                        <a href="{% url 'usuarios:deletar' usuario.id %}"><button>Deletar</button></a>
                     </td>
 
                 </tr>
@@ -36,6 +38,8 @@
         </table>
     {% else %}
         <h1>Nao existem usuarios</h1>
+        <button><a href="{% url 'usuarios:criar' %}">Criar usuario</a></button>
+        <button><a href="{% url 'usuarios:home' %}">Voltar</a></button>
     {% endif %}
 
 </body>
