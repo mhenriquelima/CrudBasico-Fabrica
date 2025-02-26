@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe</title>
+</head>
+<body>
+    <h1>Detalhes do usuario:</h1>
+    <p>Nome: {{ usuario.first_name }}</p>
+    <p>Sobrenome: {{ usuario.last_name }}</p>
+    <p>Email: {{ usuario.email }}</p>
+    <p>Idade: {{ usuario.age }}</p>
+    <p>Nascimento: {{ usuario.birth_date }}</p>
+    <p>Telefone: {{ usuario.phone }}</p>
+    <a href="{% url 'usuarios:listar' %}">Voltar</a>
+</body>
+</html>
