@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Users</title>
+</head>
+<body>
+    {% if usuarios %}
+        <h1>Lista de usuarios:</h1>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
+                <th>Idade</th>
+                <th>Nascimento</th>
+                <th>Telefone</th>
+            </tr>
+
+            {% for usuario in usuarios %}
+                <tr>
+                    <td>{{ usuario.first_name }}</td>
+                    <td>{{ usuario.last_name }}</td>
+                    <td>{{ usuario.email }}</td>
+                    <td>{{ usuario.age }}</td>
+                    <td>{{ usuario.birth_date }}</td>
+                    <td>{{ usuario.phone }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+       {% else %}
+            <h1>Não existem usuarios</h1>
+        {% endif %}
+</body>
+</html>
