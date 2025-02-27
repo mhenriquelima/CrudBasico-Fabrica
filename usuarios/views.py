@@ -13,6 +13,7 @@ def register_view(request):
         form = UsuarioForm(request.POST)
         if form.is_valid():
             form.save()
+            request.status_code = 201
             return redirect('usuarios:listar')
             
 
